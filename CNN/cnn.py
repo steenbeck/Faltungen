@@ -56,7 +56,7 @@ def get_trained_fashion_mnist_model(train_images, train_labels):
 	              loss='sparse_categorical_crossentropy',
 	              metrics=['accuracy'])
 
-	model.fit(train_images, train_labels, epochs = 5)
+	model.fit(train_images, train_labels, epochs = 1)
 
 	return model
 
@@ -84,24 +84,31 @@ def show_selected_fashion(test_images, test_labels):
 def show_predicted_selected_fashion(test_images, test_labels):
 	predicted = model.predict_classes(test_images)
 
-	fig = plt.figure(figsize = (20, 20))
-	columns = 4
-	rows = 5
+	columns = 3
+	rows = 3
 
-	for i in range(1, columns*rows + 1):
-		image = test_images[i]
-		image = np.array(image, dtype='float')
-		pixels = image.reshape((28, 28))
+	f, axarr = plt.subplots(rows, columns)
 
-		subplt = fig.add_subplot(rows, columns, i)
-		subplt.axis("off")
+	for i in range(0, rows):
+		for j in range(0, columns):
+			index = i*columns + j
+			image = test_images[index]
 
-		lbl = "Wahrheit: " + fashion_label(test_labels[i]) + "\n CNN: " + fashion_label(predicted[i])
-		subplt.set_title(lbl, fontsize = 10)
+			image = np.array(image, dtype='float')
+			pixels = image.reshape((28, 28))
 
-		plt.imshow(pixels, cmap='gray')
+			subplt = axarr[i, j]
+			subplt.axis("off")
 
+			lbl = "Wahrheit: " + fashion_label(test_labels[index]) + "\n CNN: " + fashion_label(predicted[index])
+			subplt.set_title(lbl, fontsize = 12)
+
+			subplt.imshow(pixels, cmap='gray')
+
+
+	f.subplots_adjust(hspace = 0.5)
 	plt.show()
+
 
 
 
