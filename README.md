@@ -88,7 +88,7 @@ if __name__ == '__main__':
 ```
 
 
-![png](output_5_0.png)
+![png](readme_graphics/output_5_0.png)
 
 
 Bildmanipulation
@@ -106,7 +106,7 @@ filter_image.filter_and_show_image([id_filter])
 ```
 
 
-![png](output_8_0.png)
+![png](readme_graphics/output_8_0.png)
 
 
 Leonhard Euler wird weichgezeichnet. Filter analog zum gleitenden Mittelwert im 1-dimensionalen.
@@ -130,7 +130,7 @@ filter_image.filter_and_show_image([blurr_filter])
 ```
 
 
-![png](output_10_0.png)
+![png](readme_graphics/output_10_0.png)
 
 
 Kantendetektion mit dem Sobel-Filter.
@@ -153,7 +153,7 @@ filter_image.filter_and_show_image([sobel_x])
 ```
 
 
-![png](output_12_0.png)
+![png](readme_graphics/output_12_0.png)
 
 
 Convolutional Neural Networks (CNN)
@@ -351,10 +351,5 @@ plt.show()
 ```
 
 
-![png](output_17_0.png)
+![png](readme_graphics/output_17_0.png)
 
-
-
-```python
-
-```
